@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.front {
+	color: red;
+}
+
+#end {
+	font-weight: bold;
+}
+
+a:link {
+	color: deepskyblue;
+}
+
+a:visited {
+	color: darkgray;
+}
+
+a:hover {
+	color: red;
+}
+
+a:active {
+	color: yellowgreen;
+}
+
