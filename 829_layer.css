@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+
+/*브라우져 기본 속성 제거*/
+body, h1 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    overflow: hidden;
+    background-color: antiquewhite;
+}
+
+
+/*gnb*/
+
+.gnb_wrap {
+    background-color: #333;
+}
+
+.gnb {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.gnb:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.gnb > li {
+    float: left;
+    position: relative;
+    width: 16.66%;
+}
+
+.gnb > li > a {
+    display: block;
+    padding: 10px 0;
+    border: 1px solid #ccc;
+    line-height: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.gnb > li > a:hover {
+    background-color: #111;
+}
+
+.gnb > li:hover .gnb_sub {
+    display: block;
+}
+
+.gnb_sub {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+}
+
+.gnb_sub li {
+    background-color: #fff;
+}
+
+.gnb_sub li + li {
+    border-top: 1px solid #ccc;
+}
+
+.gnb_sub li a {
+    display: block;
+    padding: 5px;
+    text-align: center;
+    color: #999;
+}
+
+.gnb_sub li a:hover {
+    color: #000;
+}
+
+.gnb > li:hover {
+    z-index: 1;
+}
+
+.gnb > li:hover .gnb_sub {
+    display: block;
+}
+
+/*내가 작성한 코드*/
+
+header {
+/*    width: 100%;*/
+/*    height: 70px;*/
+/*    position: fixed;*/
+    left: 0;
+    right: 0;
+/*    border: 1px solid #000;*/
+/*    background-color: blueviolet;*/
+}
+
+header h1 {
+    text-align: center;
+    line-height: 80px;
+}
+
+footer {
+    border: 1px solid #000;
+    background-color: aliceblue;
+}
+
+.container {
+    overflow: hidden;
+/*    padding-top: 122px;*/
+/*    max-width: 900px;*/
+}
+
+nav {
+    display: none;
+    float: left;
+    width: 200px;
+    background-color: #fff;
+}
+
+.category {
+    border: 2px solid #008cff;
+}
+
+.category li a {
+    display: block;
+    padding: 6px 0 5px 40px;
+    
+    background-image: url(img/coupang.png);
+    background-repeat: no-repeat;
+/*    background-position: 10px -24px;*/
+        
+    color: #333;
+    font-size: 12px;
+    font-family: '돋움', dotum, sans-serif;
+    line-height: 18px;
+}
+
+.category li a:hover {
+    color: #008cff;
+    font-weight: bold;
+/*    background-position: 10px -414px;*/
+}
+
+.category li a.item1 {
+    background-position: 10px -24px;
+}
+
+.category li a.item1:hover {
+    background-position: 10px -414px;
+}
+
+.category li a.item2 {
+    background-position: 10px -54px;
+}
+
+.category li a.item2:hover {
+    background-position: 10px -444px;
+}
+
+.category li a.item3 {
+    background-position: 10px -84px;
+}
+
+.category li a.item3:hover {
+    background-position: 10px -474px;
+}
+
+.content {
+    overflow: hidden;
+    background-color: #ccc;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+aside {
+/*    overflow: hidden;*/
+    display: none;
+    width: 200px;
+    float: right;
+    background-color: #f00;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.spot {
+    height: 500px;
+    background-image: url(img/big.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+        
+        .shopping_list {
+            margin: 0 -10px;
+            padding: 0 5px;
+        }
+        
+        .shopping_item {
+/*            단수 조절*/
+/*            float: left;*/
+/*            width: 20%;*/
+/*            margin: 0 10px;*/
+/*            height: 365px;*/
+/*            float: left;*/
+        }
+        
+        .shopping_item .box {
+            padding: 0 5px;
+        }
+        
+        
+        
+        .thumb {
+            height: 200px;
+            background-image: url(/img/logo.jpg);
+/*            background-size: cover;*/
+            border: 1px solid;
+            background-size: cover;
+            background-position: 50% 50%;
+/*            overflow: hidden;*/
+        }
+        
+        .ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        @media screen and (min-width:600px) {
+            
+            .shopping_item {
+                float: left;
+                width: 50%;            
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            
+            .shopping_item {
+                width: 33.3%;            
+            }
+        }
+        
+        @media screen and (min-width:800px) {
+            
+            .shopping_item {
+                width: 25%;            
+            }
+        }
+        
+        @media screen and (min-width:900px) {
+            
+            .shopping_item {
+                width: 20%;            
+            }
+            
+            nav {
+                display: block;
+            }
+        }
+        
+        @media screen and (orientation: landscape) {
+            
+            .thumb {
+                height: 100px;            
+            }
+        }
+        
+        @media screen and (max-width:600px) {
+            
+            .gnb > li {
+                width: 33.3%;
+            }
+        }
+
+        @media screen and (max-width:400px) {
+            
+            .gnb > li {
+                width: 50%;
+            }
+        }
+
