@@ -276,9 +276,9 @@ aside {
                 width: 20%;            
             }
             
-            nav {
-                display: block;
-            }
+/*            nav {*/
+/*                display: block;*/
+/*            }*/
         }
         
         @media screen and (orientation: landscape) {
