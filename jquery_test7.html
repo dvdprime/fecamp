@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+    <script>
+
+        jQuery(function ($) {
+/*            
+            function moveRight () {
+            $('#box').animate({left: '500px'}, moveDown);
+            }
+
+            function moveDown () {
+            $('#box').animate({top: '200px'}, moveLeft);
+            }
+
+            function moveLeft () {
+            $('#box').animate({left: '10px'}, moveUp);
+            }
+
+            function moveUp () {
+            $('#box').animate({top: '10px'}, moveRight);
+            }
+            
+            moveRight();
+    */             
+            $('.button').on('click', function(event){
+                $('#box').stop();
+            
+            });
+          
+         
+            $('#box').on('mousedown touchstart', function(event){
+                var top = parseInt($(this).css('top')), left = parseInt($(this).css('left'));
+                var startX = pageX(event), startY = pageY(event);
+// 아래 중요!!!!!!! 속도 문제
+                var $box = $(this);
+                
+                event.preventDefault();
+                console.log(event.originalEvent.touches[0].pageX);
+                console.log(top, left, event.pageX, event.pageY);
+                
+                $(document).on('mousemove touchmove', function(event){
+                    var dx = event.pageX - startX, dy = event.pageY - startY;
+                    var newTop = top + dy, newLeft = left + dx;
+                    
+                    $box.css({top:newTop, left:newLeft});
+                    console.log(event);
+                    
+                $(document).on('mouseup.drag touchend', function(event){
+                    $(this).off('mousemove.drag mouseup.drag touchmove.drag touchend.drag');
+                });
+                
+                });
+                
+                function pageX(event) {
+                    if (event.pageX) {
+                        return event.pageX;
+                    } else {
+                        return event.originalEvent.touches[0].pageX;
+                    }
+                
+                function pageY(event) {
+                    if (event.pageY) {
+                        return event.pageY;
+                    } else {
+                        return event.originalEvent.touches[0].pageY;
+                    }
+                
+                
+                }
+            
+            });
+            
+
+        });
+ 
+    </script>
+    
+    <style>
+        #box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+        
+        button {
+            position: absolute;
+            top: 120px;
+            left: 120px;
+            font-size: 15px;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <button class="button1">Stop It!</button>
+    <button class="button2">Rotate It!</button>
+</body>
+
+</html>
